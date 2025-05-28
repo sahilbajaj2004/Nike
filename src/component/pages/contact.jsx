@@ -8,9 +8,9 @@ function Contact() {
       <div className="location-address">
         Have questions or need help? Reach out to us!
         <br /><br />
-        <strong>Email:</strong> support@nike.com<br />
-        <strong>Phone:</strong> +1 234 567 8901<br />
-        <strong>Address:</strong> 123 Nike Street, Downtown City, Country 12345
+        <strong>Email:</strong> sahilbajaj0941@gmail.com<br />
+        <strong>Phone:</strong> +91 9811057531<br />
+        <strong>Address:</strong> Sonia Vihar, Delhi, India 110004
       </div>
       <form className="contact-form">
         <label htmlFor="name">Name</label>
