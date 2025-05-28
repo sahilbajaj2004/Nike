@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import "./App.css";
-import Navigation from './component/Navigation';
-import ShoesSection from "./component/home";
-import Shop from './component/pages/shop';
-import Location from './component/pages/location';
-import About from './component/pages/about';
-import Contact from './component/pages/contact';
-import Login from './component/pages/login';
+import Navigation from './components/Navigation';
+import ShoesSection from "./components/home";
+import Shop from './components/pages/shop';
+import Location from './components/pages/location';
+import About from './components/pages/about';
+import Contact from './components/pages/contact';
+import Login from './components/pages/login';
 
 const App = () => {
     return (
