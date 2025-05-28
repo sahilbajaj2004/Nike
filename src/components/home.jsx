@@ -7,7 +7,7 @@ let ShoesSection = () => {
     <main className="shoes container">
       <div className="shoes-content">
         <h1>
-          YOUR FEET <span className="highlight">DESERVE</span> THE BEST
+          YOUR FEET <span className="highlight">DESERVE</span> THE BEST 
         </h1>
         <p>
           Your feet deserve the best and we're here to help you with our shoes. Step into comfort and style with our latest collection.
