@@ -1,19 +1,20 @@
 import brandlogo from '../public/brand_logo.png';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; // Change from Link to NavLink
 
 const Navigation = () => { 
 return ( 
     <nav className="container">
           <div className="logo">
-            <Link to="/"><img src={brandlogo} alt="Logo" /></Link>
+            <NavLink to="/"><img src={brandlogo} alt="Logo" /></NavLink>
           </div>
           <ul>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/shop">Shop</Link></li>
-            <li><Link to="/location">Location</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li><NavLink to="/" end className={({ isActive }) => isActive ? "active-link" : ""}>Home</NavLink></li>
+            <li><NavLink to="/about" className={({ isActive }) => isActive ? "active-link" : ""}>About</NavLink></li>
+            <li><NavLink to="/shop" className={({ isActive }) => isActive ? "active-link" : ""}>Shop</NavLink></li>
+            <li><NavLink to="/location" className={({ isActive }) => isActive ? "active-link" : ""}>Location</NavLink></li>
+            <li><NavLink to="/contact" className={({ isActive }) => isActive ? "active-link" : ""}>Contact</NavLink></li>
           </ul>
-          <button><Link to="/login">Login</Link></button>
+          <button><NavLink to="/login" className={({ isActive }) => isActive ? "active-link" : ""}>Login</NavLink></button>
     </nav>
 );
 }

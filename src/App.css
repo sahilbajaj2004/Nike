@@ -15,6 +15,7 @@ body {
 }
 
 .container {
+    position: relative;
     margin: 0 auto;
     align-items: center;
 }
@@ -49,72 +50,484 @@ a{
     color: #000;
     text-decoration: none;
 }
-.shoes {
+/* Add this to your CSS file */
+.active-link {
+    border-bottom: 2px solid red;
+    color: red;
+    transition: all 0.3s ease;
+    /* Optional: also change text color */
+}
+.shoes.container {
     display: flex;
     align-items: center;
-    height: calc(100vh - 72px);
+    justify-content: space-between;
+    min-height: 70vh;
+    padding: 40px 5vw;
+    gap: 40px;
 }
 
-.shoes content {
+.shoes-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 36px;
-
+    justify-content: center;
+    gap: 24px;
 }
 
-.shoes h1 {
-    margin: 10px;
-    font-weight: 700;
-    font-size: 80px;
-    line-height: 90px;
-    max-width: 800px;
+.shoes-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 10px;
+    line-height: 1.1;
 }
 
-.shoes p {
-    margin: 10px;
-    font-weight: 600;
+.shoes-content .highlight {
+    color: var(--red);
+}
+
+.shoes-content p {
+    font-size: 1.2rem;
     color: var(--grey);
+    margin-bottom: 18px;
     max-width: 500px;
 }
 
 .shoes-btn {
-    margin: 10px;
     display: flex;
-    gap: 16px;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.primary-btn {
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.primary-btn:hover {
+    background: #b01722;
 }
 
 .second-btn {
-    /* margin: 10px; */
     background: transparent;
-    color: var(--grey);
-    border: 1px solid gray;
+    color: var(--red);
+    border: 2px solid var(--red);
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.second-btn:hover {
+    background: var(--red);
+    color: #fff;
 }
 
 .shopping p {
-    margin: 10px;
-    font-size: 14px;
-    margin-top: 8px;
+    font-size: 1rem;
+    color: var(--grey);
+    margin-bottom: 8px;
 }
 
 .brand-icons {
-    margin: 10px;
     display: flex;
     gap: 20px;
-}
-.brand-icon img {
-    width: 100px;
-    height: 100px;
+    align-items: center;
 }
 
-.animate{
-animation: float 3s ease-in-out infinite;
+.brand-icons img {
+    width: 40px;
+    height: 40px;
+    filter: grayscale(0.2);
+    transition: filter 0.2s, transform 0.2s;
+}
+
+.brand-icons img:hover {
+    filter: grayscale(0);
+    transform: scale(1.08);
+}
+
+.shoes-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shoes-image img {
+    width: 100%;
+}
+
+.animate {
+    animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }   
+}
+
+@media (max-width: 900px) {
+    .shoes.container {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+    .shoes-image img {
+        max-width: 300px;
+    }
+}
+
+/* --- About Page Styles --- */
+.about-container {
+    max-width: 800px;
+        margin: 20px auto 0 auto;
+        padding: 32px 5vw;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+        font-family: "Poppins", sans-serif;
+        min-height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+
+.about-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.about-text {
+    font-size: 20px;
+    color: var(--grey);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.about-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.about-feature {
+    flex: 1 1 220px;
+    min-width: 220px;
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.about-feature h3 {
+    font-size: 22px;
+    color: var(--red);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.about-feature p {
+    font-size: 16px;
+    color: #444;
+}
+
+
+
+/* --- 2-column zigzag grid --- */
+.shop-zigzag-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.shop-zigzag-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.shop-zigzag-card {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    /* Increase or decrease this value for more/less space */
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem 1rem;
+    min-height: 180px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.shop-zigzag-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin : 30px
+}
+
+.shop-zigzag-info {
+    flex: 1;
+    text-align: left;
+}
+
+@media (max-width: 800px) {
+    .shop-zigzag-row {
+        grid-template-columns: 1fr;
+    }
+
+    .shop-zigzag-card,
+    .shop-zigzag-card.reverse {
+        flex-direction: column !important;
+        text-align: center;
+    }
+}
+
+.shop-zigzag-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    /* Increased from 2rem to 3rem */
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.shop-zigzag-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem 1rem;
+    min-height: 180px;
+    /* Remove justify-self */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Remove old justify-self rules */
+.shop-zigzag-row.even .shop-zigzag-card:first-child,
+.shop-zigzag-row.even .shop-zigzag-card:last-child,
+.shop-zigzag-row.odd .shop-zigzag-card:first-child,
+.shop-zigzag-row.odd .shop-zigzag-card:last-child {
+    justify-self: unset;
+}
+
+.shop-zigzag-row:nth-child(even) .shop-zigzag-card {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.shop-zigzag-row:nth-child(even) .shop-zigzag-info {
+    text-align: right;
+}
+
+/* Location Styles */
+.location-container {
+    max-width: 800px;
+    margin: 10px auto 0 auto;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+    font-family: "Poppins", sans-serif;
+}
+
+.location-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.location-address {
+    font-size: 1.2rem;
+    color: var(--grey);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.location-map {
+    width: 100%;
+    height: 320px;
+    background: #f8f8f8;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-top: 10px;
+}
+
+/* contact */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-form label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+    color: var(--grey);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 18px;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    background: #f8f8f8;
+    transition: border 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1.5px solid var(--red);
+    outline: none;
+}
+
+.contact-form button {
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.contact-form button:hover {
+    background: #b01722;
+}
+
+/* login */
+
+.login-container {
+    max-width: 400px;
+    margin: 60px auto 0 auto;
+    padding: 36px 28px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.login-form label {
+    font-weight: 500;
+    color: var(--grey);
+    margin-bottom: 6px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background: #f8f8f8;
+    transition: border 0.2s;
+}
+
+.login-form input:focus {
+    border: 1.5px solid var(--red);
+    outline: none;
+}
+
+.login-btn {
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 10px auto 0 auto;
+    /* Center the button */
+    transition: background 0.2s;
+    display: block;
+    width: 150px;
+    /* Make the button smaller */
+    text-align: center;
+    /* Center the text */
+}
+
+.login-btn:hover {
+    background: #b01722;
+}
+
+.login-link {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.login-link a {
+    color: var(--red);
+    text-decoration: underline;
+    font-weight: 500;
 }

@@ -7,6 +7,7 @@ import Shop from './component/pages/shop';
 import Location from './component/pages/location';
 import About from './component/pages/about';
 import Contact from './component/pages/contact';
+import Login from './component/pages/login';
 
 const App = () => {
     return (
@@ -18,7 +19,7 @@ const App = () => {
                 <Route path='/location' element={<Location />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
-                <Route path='/login' element={<h1>Login Page</h1>} />
+                <Route path='/login' element={<Login/>} />
                 <Route path='*' element={<h1>404 Not Found</h1>} />
             </Routes>
         </BrowserRouter>

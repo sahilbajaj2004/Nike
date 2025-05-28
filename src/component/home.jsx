@@ -1,33 +1,34 @@
 import amazon from '../public/amazon.png';
 import flipkart from '../public/flipkart.png';
 import shoes from '../public/shoes_image.png';
-let ShoesSection = ()=> {
+
+let ShoesSection = () => {
   return (
-      <main className="shoes container">
+    <main className="shoes container">
       <div className="shoes-content">
-        <h1> YOUR FEET DESERVE THE BEST</h1>
-        <p> YOUR FEET DESERVE THE BEST AND WE'RE HERE TO HELP YOU WITH OUR
-            SHOES. YOUR FEET DESERVE THE BEST AND WE'RE HERE TO HELP YOU WITH OUR 
-            SHOES.
+        <h1>
+          YOUR FEET <span className="highlight">DESERVE</span> THE BEST
+        </h1>
+        <p>
+          Your feet deserve the best and we're here to help you with our shoes. Step into comfort and style with our latest collection.
         </p>
         <div className="shoes-btn">
-            <button>Shop Now</button>
-            <button className="second-btn">Category</button>
+          <button className="primary-btn">Shop Now</button>
+          <button className="second-btn">Category</button>
+        </div>
+        <div className="shopping">
+          <p>Also Available On</p>
+          <div className="brand-icons">
+            <img src={amazon} alt="Amazon" />
+            <img src={flipkart} alt="Flipkart" />
+          </div>
+        </div>
       </div>
-      <div
-        className="Shopping">
-            <p>Also Available On</p>
-
-            <div className="brand-icons">
-              <img src={amazon} alt="amazon-logo" />
-              <img src={flipkart} alt="flipkart-logo" />
-            </div>
+      <div className="shoes-image">
+        <img src={shoes} alt="Nike Shoes" className="animate" />
       </div>
-      </div>
-      <div className="shoes-image"></div>
-       <img src={shoes} alt="shoes-image" className='animate' />
-
-      </main>
+    </main>
   );
 };
+
 export default ShoesSection;
