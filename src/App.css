@@ -50,12 +50,11 @@ a{
     color: #000;
     text-decoration: none;
 }
-/* Add this to your CSS file */
+
 .active-link {
     border-bottom: 2px solid red;
     color: red;
     transition: all 0.3s ease;
-    /* Optional: also change text color */
 }
 .shoes.container {
     display: flex;
@@ -258,7 +257,7 @@ a{
 
 
 
-/* --- 2-column zigzag grid --- */
+/* --- Shop Page Styles --- */
 .shop-zigzag-rows {
     display: flex;
     flex-direction: column;
@@ -277,7 +276,6 @@ a{
     display: flex;
     align-items: center;
     gap: 2.5rem;
-    /* Increase or decrease this value for more/less space */
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -318,7 +316,6 @@ a{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    /* Increased from 2rem to 3rem */
     margin-left: 2rem;
     margin-right: 2rem;
 }
@@ -332,12 +329,10 @@ a{
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     padding: 1.5rem 1rem;
     min-height: 180px;
-    /* Remove justify-self */
     padding-left: 0;
     padding-right: 0;
 }
 
-/* Remove old justify-self rules */
 .shop-zigzag-row.even .shop-zigzag-card:first-child,
 .shop-zigzag-row.even .shop-zigzag-card:last-child,
 .shop-zigzag-row.odd .shop-zigzag-card:first-child,
@@ -507,13 +502,10 @@ a{
     font-size: 1rem;
     cursor: pointer;
     margin: 10px auto 0 auto;
-    /* Center the button */
     transition: background 0.2s;
     display: block;
     width: 150px;
-    /* Make the button smaller */
     text-align: center;
-    /* Center the text */
 }
 
 .login-btn:hover {
